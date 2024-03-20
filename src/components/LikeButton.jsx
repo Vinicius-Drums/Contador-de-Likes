@@ -1,23 +1,27 @@
-import React, { useState } from "react"; // Importando o módulo 'react' e a função 'useState' para gerenciar o estado
-import "./LikeButton.jsx"; // Importando o estilo CSS do componente (embora a extensão .jsx não seja comum para arquivos de estilo)
-import likeImage from "../assets/LogoLike.png"; // Importando a imagem de curtida
+// Importando o React e a função useState do módulo 'react'
+import React, { useState } from "react";
 
-// Definição do componente funcional LikeButton
+// Importando a imagem de curtida
+import likeImage from "../assets/LogoLike.png";
+
+// Definindo o componente funcional LikeButton
 const LikeButton = () => {
-  const [likes, setLikes] = useState(0); // Definindo o estado 'likes' com o valor inicial de 0 e o método 'setLikes' para atualizá-lo
+  // Definindo o estado 'likes' para controlar o número de curtidas
+  const [likes, setLikes] = useState(0); // Aqui  o useState para definir o estado 'likes' inicializado com o valor 0
 
   // Função para lidar com o clique no botão de curtir
   const handleLikeClick = () => {
-    setLikes(likes + 1); // Incrementando o número de likes ao clicar no botão
+    // Incrementando o número de curtidas ao clicar no botão
+    setLikes(likes + 1); // Aqui  a função setLikes para atualizar o estado 'likes' incrementando seu valor em 1
   };
 
   // Retorno do componente renderizado
   return (
     <div className="like-button-container">
       <img src={likeImage} alt="Ícone de Curtida" /> {/* Imagem de curtida */}
-      <h1>Meu Contador de Likes</h1> {/* Título do contador de likes */}
-      <p>Número de Likes ❤️: {likes}</p> {/* Exibição do número atual de likes */}
-      <button onClick={handleLikeClick}>Curtir</button> {/* Botão para adicionar um like */}
+      <h1>Meu Contador de Likes</h1> {/* Título do contador de curtidas */}
+      <p>Número de Likes ❤️: {likes}</p> {/* Exibição do número atual de curtidas */}
+      <button onClick={handleLikeClick}>Curtir</button> {/* Botão para adicionar uma curtida */}
     </div>
   );
 };
